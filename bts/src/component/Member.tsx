@@ -1,10 +1,10 @@
 import "./MemberCard.css";
 import { useState } from "react";
 
-import type { Member } from "../types/member";
+import type { TMember } from "../types/member";
 import Navigation from "./Navigation";
 
-const members: Member[] = [
+const members: TMember[] = [
   { image: "/bts/bts1.png", nick: "RM" },
   { image: "/bts/bts2.png", nick: "진" },
   { image: "/bts/bts3.png", nick: "슈가" },
@@ -24,7 +24,7 @@ export default function Member() {
 
   return (
     <>
-      <div>
+      <div className="member-slice">
         <div className="member-card">
           <img src={members[index].image} alt={members[index].nick} />
           <h1>{members[index].nick}</h1>

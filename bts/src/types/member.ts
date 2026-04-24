@@ -1,4 +1,4 @@
-export type Member = {
+export type TMember = {
   image: string;
   nick: string;
 };

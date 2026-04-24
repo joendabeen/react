@@ -1,4 +1,4 @@
-div {
+.member-slice {
   display: flex;
   flex-wrap: wrap;
   width: 300px;

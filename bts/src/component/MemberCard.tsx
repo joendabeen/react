@@ -1,8 +1,8 @@
 import "./MemberCard.css";
-import type { Member } from "../types/member";
+import type { TMember } from "../types/member";
 
 interface MemberCardProps {
-  member: Member;
+  member: TMember;
 }
 
 // unboxing 두 번

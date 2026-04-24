@@ -1,0 +1,25 @@
+.book {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  min-width: 225px;
+  padding: 1rem;
+  margin: 1rem;
+  background: linear-gradient(#e66465, #9198e5);
+  border-radius: 2%;
+  box-shadow: 1rem 1rem 3rem lightslategray;
+}
+
+.book img {
+  width: 100%;
+  border: 2.5px solid snow;
+}
+
+.book h1 {
+  font-size: 20px;
+}
+
+.book h3 {
+  font-size: 15px;
+  text-align: end;
+}

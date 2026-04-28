@@ -7,6 +7,8 @@ type ThemeContextType = {
   toggleTheme: () => void;
 };
 
+// 초기화
+// type만 맞춰준 것
 const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
   toggleTheme: () => {

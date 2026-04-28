@@ -1,6 +1,7 @@
 // import "./Movie.css";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useFetch } from "./useFetch";
 
 interface Movie {
   id: number;
@@ -9,32 +10,36 @@ interface Movie {
 }
 
 export default function Movie() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  // const [movies, setMovies] = useState<Movie[]>([]);
 
-  useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/wizard113/ML-Basic/main/movie.json",
-    )
-      .then((res) => res.json())
-      .then((data) => setMovies(data["movies"]));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://raw.githubusercontent.com/wizard113/ML-Basic/main/movie.json",
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setMovies(data["movies"]));
+  // }, []);
 
-  // async await
-  useEffect(() => {
-    const load = async () => {
-      const res = await fetch(
-        "https://raw.githubusercontent.com/wizard113/ML-Basic/main/movie.json",
-      );
-      const data = await res.json();
-      setMovies(data.movies);
-    };
+  // // async await
+  // useEffect(() => {
+  //   const load = async () => {
+  //     const res = await fetch(
+  //       "https://raw.githubusercontent.com/wizard113/ML-Basic/main/movie.json",
+  //     );
+  //     const data = await res.json();
+  //     setMovies(data.movies);
+  //   };
 
-    load();
-  }, []);
+  //   load();
+  // }, []);
+
+  const { data, loading } = useFetch<{ movies: Movie[] }>(
+    "https://raw.githubusercontent.com/wizard113/ML-Basic/main/movie.json",
+  );
 
   return (
     <div className="movieList" style={container}>
-      {movies.map((movie) => (
+      {data?.movies.map((movie) => (
         <div style={card} key={movie.id}>
           <img style={image} src={movie.poster} alt={movie.title} />
           <h3 style={title}>{movie.title}</h3>

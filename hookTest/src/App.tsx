@@ -1,6 +1,6 @@
 import "./App.css";
-import UseToggleTest from "./component/UseToggleTest";
-
+// import UseFetchTest from "./component/UseFetchTest";
+// import UseToggleTest from "./component/UseToggleTest";
 // import DarkOrLight from "./component/DarkOrLight";
 // import Login from "./component/Login";
 // import UseReducerCounter from "./component/UseReducerCounter";
@@ -8,7 +8,7 @@ import UseToggleTest from "./component/UseToggleTest";
 // import UseCallback from "./component/UseCallback";
 // import ExUseMemo from "./component/ExUseMemo";
 // import UseMemoTest from "./component/UseMemoTest";
-// import Movie from "./component/Movie";
+import Movie from "./component/Movie";
 // import CCounter from "./component/CCounter";
 // import ExUseEffect from "./component/ExUseEffect";
 // import Test from "./component/Test";
@@ -18,7 +18,8 @@ import UseToggleTest from "./component/UseToggleTest";
 function App() {
   return (
     <>
-      <UseToggleTest />
+      {/* <UseFetchTest /> */}
+      {/* <UseToggleTest /> */}
       {/* <DarkOrLight /> */}
       {/* <Login /> */}
       {/* <UseReducerCounter /> */}
@@ -26,7 +27,7 @@ function App() {
       {/* <UseCallback /> */}
       {/* <UseMemoTest /> */}
       {/* <ExUseMemo num={54} /> */}
-      {/* <Movie /> */}
+      <Movie />
       {/* <Test /> */}
       {/* <UserList1 />
       <UserList />

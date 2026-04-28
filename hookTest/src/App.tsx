@@ -1,5 +1,7 @@
 import "./App.css";
-import DarkOrLight from "./component/DarkOrLight";
+import UseToggleTest from "./component/UseToggleTest";
+
+// import DarkOrLight from "./component/DarkOrLight";
 // import Login from "./component/Login";
 // import UseReducerCounter from "./component/UseReducerCounter";
 // import UseRefTest from "./component/UseRefTest";
@@ -16,7 +18,8 @@ import DarkOrLight from "./component/DarkOrLight";
 function App() {
   return (
     <>
-      <DarkOrLight />
+      <UseToggleTest />
+      {/* <DarkOrLight /> */}
       {/* <Login /> */}
       {/* <UseReducerCounter /> */}
       {/* <UseRefTest /> */}

@@ -1,0 +1,29 @@
+.movieList {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movieList div {
+  width: 11rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.movieList img {
+  height: 21rem;
+  padding: 0;
+  margin: 0;
+}
+
+.movieList h3 {
+  text-align: center;
+}

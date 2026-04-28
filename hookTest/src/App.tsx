@@ -1,5 +1,6 @@
 import "./App.css";
-import Login from "./component/Login";
+import DarkOrLight from "./component/DarkOrLight";
+// import Login from "./component/Login";
 // import UseReducerCounter from "./component/UseReducerCounter";
 // import UseRefTest from "./component/UseRefTest";
 // import UseCallback from "./component/UseCallback";
@@ -15,7 +16,8 @@ import Login from "./component/Login";
 function App() {
   return (
     <>
-      <Login />
+      <DarkOrLight />
+      {/* <Login /> */}
       {/* <UseReducerCounter /> */}
       {/* <UseRefTest /> */}
       {/* <UseCallback /> */}

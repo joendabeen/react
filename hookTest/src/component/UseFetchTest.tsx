@@ -1,5 +1,5 @@
 import Movie from "./Movie";
-import { useFetch } from "./useFetch";
+import { useFetch } from "../hook/useFetch";
 
 type Movie = {
   id: number;

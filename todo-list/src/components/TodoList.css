@@ -1,0 +1,11 @@
+.TodoList .searchbar {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0;
+}
+
+.TodoList .searchbar:focus {
+  outline: none;
+  border-bottom: 1px solid #1f93ff;
+}

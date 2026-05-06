@@ -6,7 +6,8 @@
 // import SayHello from "./component/SayHello";
 // import Library from "./component/Library";
 // import EventBasic from "./component/EventBasic";
-import LoginControl from "./component/LoginControl";
+// import LoginControl from "./component/LoginControl";
+import CardList from "./component/CardList";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       <Welcome name="박다라" /> */}
       {/* <Library /> */}
       {/* <EventBasic type="all" /> */}
-      <LoginControl />
+      {/* <LoginControl /> */}
+      <CardList />
     </>
   );
 }

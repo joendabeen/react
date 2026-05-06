@@ -3,13 +3,13 @@ import type { Todo } from "../App";
 
 interface TodoItemProps {
   todo: Todo;
-  onUdate: (targetId: number) => void;
+  onUpdate: (targetId: number) => void;
   onDelete: (targetId: number) => void;
 }
 
-export default function TodoItem({ todo, onUdate, onDelete }: TodoItemProps) {
+export default function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
   const onChangeCheckBox = () => {
-    onUdate(todo.id);
+    onUpdate(todo.id);
   };
 
   const onDeleteTodo = () => {

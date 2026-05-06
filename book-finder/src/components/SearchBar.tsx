@@ -1,0 +1,28 @@
+import "./SearchBar.css";
+
+import { useRef } from "react";
+
+interface SearchBarProps {
+  onChangeQuery: (q: string) => void;
+  resetPage: () => void;
+}
+
+export default function SearchBar({
+  onChangeQuery,
+  resetPage,
+}: SearchBarProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleSearchClick = () => {
+    if (!inputRef.current) return;
+    onChangeQuery(inputRef.current.value);
+    resetPage();
+  };
+
+  return (
+    <div className="search-bar">
+      <input type="text" placeholder="검색어를 입력" ref={inputRef} />
+      <button onClick={handleSearchClick}>검색</button>
+    </div>
+  );
+}

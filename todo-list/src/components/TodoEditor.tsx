@@ -1,20 +1,20 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "./TodoEditor.css";
+import { TodoDispatchContext } from "../TodoContext";
 
-type TodoEditorProps = {
-  onCreate: (content: string) => void;
-};
-
-export default function TodoEditor({ onCreate }: TodoEditorProps) {
+export default function TodoEditor() {
   const [content, setContent] = useState<string>("");
   // DOM 접근
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const { onCreate } = useContext(TodoDispatchContext);
 
   const onChangeContent = (e: React.ChangeEvent<HTMLInputElement>) => {
     setContent(e.target.value);
   };
 
   const onSubmit = () => {
+    console.log("2 TodoItem 업데이트");
     if (!content) {
       inputRef.current?.focus();
       return;

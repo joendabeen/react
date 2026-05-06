@@ -1,16 +1,13 @@
 import TodoItem from "./TodoItem";
 import "./TodoList.css";
 import type { Todo } from "../App";
-import { useState, type ChangeEvent } from "react";
+import { useContext, useMemo, useState, type ChangeEvent } from "react";
+import { TodoStateContext } from "../TodoContext";
 
-interface TodoListProps {
-  todos: Todo[];
-  onUpdate: (targetId: number) => void;
-  onDelete: (targetId: number) => void;
-}
-
-export default function TodoList({ todos, onUpdate, onDelete }: TodoListProps) {
+export default function TodoList() {
   const [search, setSearch] = useState("");
+
+  const { todos } = useContext(TodoStateContext);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -22,7 +19,8 @@ export default function TodoList({ todos, onUpdate, onDelete }: TodoListProps) {
       : todos.filter((todo) => todo.content.includes(search));
   };
 
-  const analyzeTodo = () => {
+  // useMemo를 사용하므로써 검색어 입력할 때마다 rerendering 되는 것 방지
+  const analyzeTodo = useMemo(() => {
     console.log("analyzeTodo 호출");
 
     const totalCount = todos.length;
@@ -34,9 +32,9 @@ export default function TodoList({ todos, onUpdate, onDelete }: TodoListProps) {
       doneCount,
       notDoneCount,
     };
-  };
+  }, [todos]);
 
-  const { totalCount, doneCount, notDoneCount } = analyzeTodo();
+  const { totalCount, doneCount, notDoneCount } = analyzeTodo;
 
   return (
     <div className="TodoList">
@@ -54,12 +52,7 @@ export default function TodoList({ todos, onUpdate, onDelete }: TodoListProps) {
       />
       <div>
         {getSearchResult().map((todo) => (
-          <TodoItem
-            todo={todo}
-            key={todo.id}
-            onUdate={onUpdate}
-            onDelete={onDelete}
-          />
+          <TodoItem todo={todo} key={todo.id} />
         ))}
       </div>
     </div>

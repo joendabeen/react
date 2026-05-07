@@ -1,4 +1,20 @@
-import reducer from "./reducer";
-import { createStore } from "redux";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-export const store = createStore(reducer);
+const slice = createSlice({
+  name: "counter",
+  initialState: { value: 0 },
+  reducers: {
+    increase: (state) => {
+      state.value += 1;
+    },
+    decrease: (state) => {
+      state.value -= 1;
+    },
+  },
+});
+
+export const { increase, decrease } = slice.actions;
+
+export const store = configureStore({
+  reducer: slice.reducer,
+});

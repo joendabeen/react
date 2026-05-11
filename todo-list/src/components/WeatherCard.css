@@ -1,0 +1,10 @@
+.weather-card {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  min-width: 10rem;
+}
+
+.weather-card p {
+  font-size: 12px;
+}

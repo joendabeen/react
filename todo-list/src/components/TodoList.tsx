@@ -10,6 +10,8 @@ interface TodoListProps {
 }
 
 export default function TodoList({ todos, onUpdate, onDelete }: TodoListProps) {
+  console.log("todo list");
+
   const [search, setSearch] = useState("");
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +38,7 @@ export default function TodoList({ todos, onUpdate, onDelete }: TodoListProps) {
           <TodoItem
             todo={todo}
             key={todo.id}
-            onUdate={onUpdate}
+            onUpdate={onUpdate}
             onDelete={onDelete}
           />
         ))}

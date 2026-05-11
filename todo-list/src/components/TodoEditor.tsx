@@ -6,6 +6,8 @@ type TodoEditorProps = {
 };
 
 export default function TodoEditor({ onCreate }: TodoEditorProps) {
+  console.log("todo editor");
+
   const [content, setContent] = useState<string>("");
   // DOM 접근
   const inputRef = useRef<HTMLInputElement>(null);
@@ -15,6 +17,7 @@ export default function TodoEditor({ onCreate }: TodoEditorProps) {
   };
 
   const onSubmit = () => {
+    console.log("todo create");
     if (!content) {
       inputRef.current?.focus();
       return;

@@ -1,18 +1,23 @@
 import "./TodoItem.css";
 import type { Todo } from "../App";
+import { memo } from "react";
 
 interface TodoItemProps {
   todo: Todo;
-  onUdate: (targetId: number) => void;
+  onUpdate: (targetId: number) => void;
   onDelete: (targetId: number) => void;
 }
 
-export default function TodoItem({ todo, onUdate, onDelete }: TodoItemProps) {
+function TodoItem({ todo, onUpdate, onDelete }: TodoItemProps) {
+  console.log("todo item");
+
   const onChangeCheckBox = () => {
-    onUdate(todo.id);
+    console.log("todo update");
+    onUpdate(todo.id);
   };
 
   const onDeleteTodo = () => {
+    console.log("todo delete");
     onDelete(todo.id);
   };
 
@@ -35,3 +40,6 @@ export default function TodoItem({ todo, onUdate, onDelete }: TodoItemProps) {
     </div>
   );
 }
+
+export default memo(TodoItem);
+// export default TodoItem;

@@ -4,17 +4,18 @@ import SearchBarLayout from "@/components/searchbar-layout";
 // import sales from "@/mock/sales.json";
 import SaleItem from "@/components/sale-item";
 import { fetchRecentSales } from "@/util/fetch-sales";
-import { InferGetServerSidePropsType } from "next";
+import { InferGetStaticPropsType } from "next";
 
 // 이름이 고정되어야 함
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  console.log("getStaticProps");
   const sales = await fetchRecentSales();
   return { props: { sales } };
 }
 
 export default function Home({
   sales,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className={style.title}>
       <section>
